@@ -1,11 +1,11 @@
 import './EmptyList.css'
 
-export function EmptyList() {
+export function EmptyList({content}) {
   return (
     <section className="empty-list">
-      <h1>No Task!</h1>
+      <h1>{content.title}</h1>
       <br/>
-      <span>Add tasks to Track.</span>
+      <span>{content.subTitle}</span>
     </section>
   )
 }

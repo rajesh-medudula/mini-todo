@@ -7,8 +7,8 @@ import { TaskProvider } from './features/todo/context/TaskContext'
 function App() {
   return (
     <div>
-      <Header />
       <TaskProvider>
+        <Header />
         <List />
       </TaskProvider>
     </div>
