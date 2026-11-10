@@ -1,30 +1,20 @@
-const appData = localStorage.getItem("mini-todo-list#193u74");
+const STORAGE_KEY = "mini-todo-list#193u74";
 
 export const getAppData = () => {
-  return appData ? JSON.parse(appData) : [];
+  const savedData = localStorage.getItem(STORAGE_KEY);
+  return savedData ? JSON.parse(savedData) : {};
 };
 
 export const saveAppData = (appData) => {
- localStorage.setItem("mini-todo-list#193u74", JSON.stringify(appData)); 
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(appData));
 };
 
-export const getTasks = () => {
-  const appData = getAppData();
-
-  return appData ? appData.tasks : [];
-}
+export const getTasks = () => getAppData().tasks ?? [];
 
 export const saveTasks = (tasks) => {
-  const appData = getAppData();
-
-  const newAppData = {...appData, tasks: [...tasks]};
-  saveAppData(newAppData);
-}
+  saveAppData({ ...getAppData(), tasks });
+};
 
 export const getTaskById = (id) => {
-  const tasks = getTasks();
-
-  const match = tasks.find((task) => (task.id === id));
-
-  return match;
-}
+  return getTasks().find((task) => task.id === id);
+};
