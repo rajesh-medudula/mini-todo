@@ -1,0 +1,52 @@
+@import url('https://googleapis.com');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-bg: #ffffff;
+  --secondary-bg: #000000;
+  --surface-bg: #e5e7eb;
+  --primary-text: #1f2937;
+  --secondary-text: #9ca3af;
+  --accent-text: #346ec9;
+}
+
+#root {
+  height: 100dvh;
+}
+
+#root > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--primary-text);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  outline: none;
+  border: none;
+}
+
+section {
+  padding: 5px;
+}
+
+svg {
+  pointer-events: none;
+}

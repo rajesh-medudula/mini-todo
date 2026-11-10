@@ -1,0 +1,94 @@
+.task {
+  background-color: var(--surface-bg);
+  border: 1px solid var(--secondary-bg);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 999px;
+}
+
+
+.task__title {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  font-size: 1rem;
+  font-weight: bold;
+  flex: 1;
+  min-width: 0;
+}
+
+.task__title span {
+  overflow-wrap: break-word;
+  word-break: break-all;
+  width: 100%;
+}
+
+
+@media (width <= 235px) {
+  .task {
+    flex-direction: column;
+  }
+
+  .task__title {
+    margin-right: 0;
+  }
+}
+
+.task__title--input {
+  width: 100%;
+  max-width: 700px;
+  padding: 2px 10px;
+  border-radius: inherit;
+  border: 1px;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.task__checkbox {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.task__custom-checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--secondary-bg);
+  border-radius: 999px;
+}
+
+.task__custom-checkbox > svg {
+  opacity: 0;
+}
+
+.task__checkbox:checked + .task__custom-checkbox {
+  background-color: var(--secondary-bg);
+}
+
+.task__checkbox:checked + .task__custom-checkbox > svg {
+  opacity: 1;
+  stroke: var(--primary-bg);
+}
+
+.task__checkbox:checked + .task__custom-checkbox + .task__title {
+   text-decoration: line-through var(--primary-text) wavy 2px;
+}
+
+.task button {
+  display: flex;
+  align-items: center;
+}
+
+.task__delete-btn, .task__edit-btn, .task__save-edit-btn {
+  background-color: transparent;
+}
+
+.task__delete-btn > svg, .task__edit-btn > svg, .task__save-edit-btn > svg {
+  stroke: var(--secondary-bg);
+}

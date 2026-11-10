@@ -1,0 +1,35 @@
+.add-task__content {
+  display: flex;
+}
+
+.add-task__label {
+  display: block;
+  font-weight: 600;
+  margin-block: 5px;
+  font-size: 1rem
+}
+
+#add-task__input {
+  width: 100%;
+  max-width: 700px;
+  padding: 10px;
+  border: 2px solid var(--secondary-text);
+  flex: 1;
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
+  border-right: none;
+  outline: none;
+}
+
+#add-task__input:focus {
+  border-color: var(--secondary-bg);
+}
+
+.add-task__btn {
+  padding: 10px;
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
+  background-color: var(--secondary-bg);
+  color: var(--primary-bg);
+  font-weight: 600;
+}
