@@ -8,15 +8,17 @@ import { useTask } from '../context/TaskContext'
 
 export function List() {
   const {tasks, searchValue, searchTasks} = useTask();
+  const searchedTasks = searchTasks() || [];
+  const currentTasks = searchValue ? searchedTasks : tasks || [];
 
   return (<section className="list">
     <div className='list__items'>
       {!searchValue ? (
   <>
     <AddTask />
-    {tasks.length ? (
+    {currentTasks.length ? (
       <section className='tasks'>
-        {tasks.map((task) => {
+        {currentTasks.map((task) => {
           return <TaskCard key={task.id} task={task} />
         })}
       </section>
@@ -25,9 +27,9 @@ export function List() {
     )}
   </>
 ) : (<>
-  {searchTasks().length ? (
+  {currentTasks.length ? (
       <section className='tasks'>
-        {searchTasks().map((task) => {
+        {currentTasks.map((task) => {
           return <TaskCard key={task.id} task={task} />
         })}
       </section>

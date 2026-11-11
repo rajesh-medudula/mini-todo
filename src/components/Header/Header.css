@@ -67,7 +67,6 @@ svg {
 
 .header__search-input {  
   width: 100%;
-  max-width: 700px;
   padding:5px;
   border-radius: 10px;
   font-family: inherit;

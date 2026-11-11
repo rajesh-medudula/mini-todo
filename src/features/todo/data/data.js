@@ -9,7 +9,7 @@ export const saveAppData = (appData) => {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(appData));
 };
 
-export const getTasks = () => getAppData().tasks ?? [];
+export const getTasks = () => getAppData()?.tasks ?? [];
 
 export const saveTasks = (tasks) => {
   saveAppData({ ...getAppData(), tasks });
